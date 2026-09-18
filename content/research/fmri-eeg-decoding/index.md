@@ -4,7 +4,7 @@ weight: 10
 year: 2025
 venue: Informatics and its Applications
 authors: "**Daniil Dorin**, Nikita Kiselev, Andrey Grabovoy"
-cover: scheme.png
+cover: card.png
 coverContain: true
 summary: A multimodal architecture that jointly processes fMRI and EEG signals to reconstruct visual stimuli, with contrastive alignment to CLIP and a two-stage diffusion generation pipeline.
 tags: [fMRI, EEG, contrastive learning, diffusion models]

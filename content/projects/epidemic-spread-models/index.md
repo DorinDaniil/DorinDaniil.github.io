@@ -2,8 +2,7 @@
 title: "Epidemic spread models: COVID-19 as stochastic chemical kinetics"
 weight: 40
 year: 2023
-cover: sir.png
-coverContain: true
+cover: card.png
 summary: Various approaches to modeling the spread of epidemics, in particular COVID-19, through differential equations and Markov processes. Deterministic and stochastic SIR models fitted to real multi-wave data.
 tags: [epidemiology, ODE, Markov processes]
 links:

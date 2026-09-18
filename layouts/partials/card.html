@@ -7,7 +7,7 @@
       {{ if eq $cover.MediaType.SubType "svg" }}
         <img src="{{ $cover.RelPermalink }}" alt="{{ .Title }}" loading="lazy">
       {{ else }}
-        {{ $img := $cover.Fit "900x600" }}
+        {{ $img := $cover.Fit "1000x600" }}
         <img src="{{ $img.RelPermalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}" alt="{{ .Title }}" loading="lazy">
       {{ end }}
     {{ end }}
