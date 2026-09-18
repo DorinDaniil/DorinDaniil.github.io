@@ -62,8 +62,9 @@ groups:
       - year: 2025
         title: Decoding visual stimuli from multimodal brain signals
         authors: "**D. Dorin**, N. Kiselev, A. Grabovoy"
-        venue: 22nd All-Russian Conference "Mathematical Methods for Pattern Recognition" (MMPR)
+        venue: 22nd All-Russian Conference with International Participation "Mathematical Methods of Pattern Recognition" (MMPR-2025), Murom
         doi: 10.29003/m4729.978-5-317-07438-8
+        url: https://mmro.ru/en/
       - year: 2025
         title: Enhancing fMRI decoding under limited sampling conditions
         authors: "**D. Dorin**, A. Grabovoy"
