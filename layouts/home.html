@@ -40,26 +40,16 @@
 </section>
 {{ end }}
 
-<section class="block two-col">
-  <div>
-    <h2>Teaching</h2>
-    <ul class="plain">
-      {{ range hugo.Data.teaching }}
-      <li>
-        <div class="row"><b>{{ with .url }}<a href="{{ . }}" target="_blank" rel="noopener">{{ $.Scratch.Set "t" .}}{{ end }}{{ .course }}{{ with .url }}</a>{{ end }}</b><span class="muted">{{ .period }}</span></div>
-        <div class="muted">{{ .role }} Â· {{ .org }}</div>
-        {{ with .topics }}<div class="tags">{{ range . }}<span class="tag">{{ . }}</span>{{ end }}</div>{{ end }}
-      </li>
-      {{ end }}
-    </ul>
-  </div>
-  <div>
-    <h2>Awards</h2>
-    <ul class="plain">
-      {{ range hugo.Data.awards }}
-      <li><div class="row"><b>{{ .name }}</b><span class="muted">{{ .period }}</span></div>{{ with .note }}<div class="muted">{{ . }}</div>{{ end }}</li>
-      {{ end }}
-    </ul>
-  </div>
+<section class="block">
+  <h2>Teaching</h2>
+  <ul class="plain">
+    {{ range hugo.Data.teaching }}
+    <li>
+      <div class="row"><b>{{ with .url }}<a href="{{ . }}" target="_blank" rel="noopener">{{ end }}{{ .course }}{{ with .url }}</a>{{ end }}</b><span class="muted">{{ .period }}</span></div>
+      <div class="muted">{{ .role }} · {{ .org }}</div>
+      {{ with .topics }}<div class="tags">{{ range . }}<span class="tag">{{ . }}</span>{{ end }}</div>{{ end }}
+    </li>
+    {{ end }}
+  </ul>
 </section>
 {{ end }}

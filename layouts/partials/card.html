@@ -2,7 +2,7 @@
 {{ $cover := "" }}
 {{ with .Params.cover }}{{ $cover = $.Resources.GetMatch . }}{{ end }}
 <a class="card" href="{{ .RelPermalink }}">
-  <div class="card-media{{ if .Params.coverContain }} contain{{ end }}">
+  {{ if $cover }}<div class="card-media{{ if .Params.coverContain }} contain{{ end }}">
     {{ if $cover }}
       {{ if eq $cover.MediaType.SubType "svg" }}
         <img src="{{ $cover.RelPermalink }}" alt="{{ .Title }}" loading="lazy">
@@ -11,7 +11,7 @@
         <img src="{{ $img.RelPermalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}" alt="{{ .Title }}" loading="lazy">
       {{ end }}
     {{ end }}
-  </div>
+  </div>{{ end }}
   <div class="card-body">
     <div class="card-meta">
       {{ with .Params.year }}<span class="pill">{{ . }}</span>{{ end }}

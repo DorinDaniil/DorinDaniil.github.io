@@ -2,12 +2,11 @@
 title: "Forecasting fMRI Images From Video Sequences: Linear Model Analysis"
 weight: 50
 year: 2024
-venue: Health Information Science and Systems, 12:55
-authors: "**Daniil Dorin**\\*, Nikita Kiselev\\*, Andrey Grabovoy, Vadim Strijov (\\* equal contribution)"
-affiliations: "Forecsys, Moscow; Innopolis University; Antiplagiat Company"
+venue: Health Information Science and Systems
+authors: "**Daniil Dorin**\\*, Nikita Kiselev\\*, Andrey Grabovoy, Vadim Strijov"
 cover: overview.jpg
 coverContain: true
-summary: A per-voxel linear autoregressive model predicts the next fMRI volume from ResNet152 embeddings of the video a person is watching. The best delay matches the hemodynamic lag.
+summary: A method for approximating fMRI readings from the video sequence a person watches, based on a linear model for each voxel and a time-invariant hemodynamic response.
 tags: [fMRI, video, linear models]
 links:
   - name: Paper
@@ -19,7 +18,7 @@ links:
   - name: Poster
     url: https://github.com/DorinDaniil/Forecasting-fMRI-Images/blob/main/poster/poster.pdf
     icon: poster
-  - name: Talk
+  - name: Video
     url: https://www.youtube.com/live/WnIRaRl730A?t=4305
     icon: video
 bibtex: |
@@ -35,8 +34,6 @@ bibtex: |
   }
 ---
 
-Can a linear model predict the next fMRI volume from the video a person is watching? Video frames are embedded with ResNet152 and an L2-regularised linear regression is fit **per voxel**, assuming a time-invariant hemodynamic response and a Markov property on the image sequence. The model forecasts the difference between consecutive fMRI tensors from a delayed frame embedding.
+The issue of reconstructing the relationship between functional magnetic resonance imaging (fMRI) sensor readings and human perception of the external is investigated. The study analyzes the dependence between the fMRI images and the videos viewed by individuals. Based on this analysis, a method is proposed for approximating the fMRI readings using the video sequence. The method is based on the assumption that there is a time-invariant hemodynamic response to changes in blood oxygen levels. A linear model is constructed for each individual voxel in the fMRI image, assuming that the image sequence follows a Markov property. To test the proposed method, a computational experiment was conducted on a dataset collected during tomographic examinations of a large number of individuals. The performance of the method was evaluated based on the experimental data, and hypotheses were tested regarding the invariance of the model weights and the correctness of the method.
 
-![Pipeline: ResNet152 frame embeddings and normalised fMRI tensors feed a per-voxel linear regression on the tensor difference.](overview.jpg)
-
-Experiments on a large multi-subject dataset show the best predictive delay is about five seconds, matching the known hemodynamic lag, and that occipital voxels respond predictably to visual content. Model weights are tested for invariance across subjects. The poster version, with voxel weighing, was shown at Neuroinformatics 2024.
+![Overview of the method: preprocessing of video and fMRI data, and per-voxel linear forecasting.](overview.jpg)

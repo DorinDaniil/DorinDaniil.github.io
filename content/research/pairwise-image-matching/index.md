@@ -2,16 +2,15 @@
 title: Pairwise Image Matching for Plagiarism Detection
 weight: 30
 year: 2025
-venue: Doklady Mathematics, 112(2)
+venue: Doklady Mathematics
 authors: "**Daniil Dorin**, Kseniia Varlamova, Andrey Grabovoy"
-affiliations: "Antiplagiat Company, Moscow"
-cover: task.png
+cover: method.png
 coverContain: true
-summary: A Siamese network that separates near-duplicates (one image manually derived from another) from merely similar images in scientific publications, robust to rotation, cropping, grayscale, contrast, blur and noise.
-tags: [image matching, Siamese network, plagiarism detection]
+summary: A siamese network with a weight-shared encoder, symmetric fusion and a similarity head, trained with plagiarism-mimicking augmentations to minimise false positives in pairwise image plagiarism detection.
+tags: [image matching, siamese network, plagiarism detection]
 links:
   - name: Paper
-    url: https://link.springer.com/article/10.1134/S1064562425700486
+    url: https://doi.org/10.1134/S1064562425700486
     icon: paper
   - name: Code
     url: https://github.com/DorinDaniil/Pairwise-Image-Matching
@@ -29,16 +28,6 @@ bibtex: |
   }
 ---
 
-Two microscopy images of different cells can look almost identical. A grayscale, cropped copy of one figure can look quite different. Retrieval systems rank by visual similarity and get both cases wrong. We train a **Siamese network** to answer the right question: was the second image manually derived from the first?
+Plagiarism detection represents a critical task across various fields, including academic publishing, journalism, e-commerce, and media verification. While substantial attention focuses on identifying textual plagiarism, image plagiarism, particularly in biology and medicine, remains a significant concern. Automated retrieval systems often surface numerous potential candidates, but a high rate of false positives — pairs incorrectly flagged as plagiarism — necessitates highly accurate pairwise matching for verification. Manual alterations to images, such as rotations, mirroring, conversion to grayscale, and color distortion constitute forms of plagiarism. This work addresses the critical need for false positive rate (FPR) minimization in pairwise image plagiarism detection through rigorous analysis of similarity scoring models. The proposed approach employs a siamese network with three key components: a weight-shared encoder, a symmetric fusion module with order-invariant embedding combination, and a similarity classification head. Training employs a hybrid self-supervised strategy with plagiarism-mimicking augmentations, combining cross-entropy loss and contrastive regularization. Ablation studies evaluate encoder architectures and fusion strategies. For comparison, identical siamese architectures utilize frozen state-of-the-art self-supervised representations Barlow Twins and CLIP, with fusion modules and classification heads trained identically. Experimental validation across multi-domain images demonstrates that end-to-end trained models consistently outperform approaches using frozen state-of-the-art representations.
 
-![Near-duplicate (derived) vs. merely similar (distinct source).](task.png)
-
-## Architecture
-
-- **Encoders:** EfficientNet-B3, ViT-L/16, CLIP ViT-H/14, or a Barlow Twins ResNet50. Some are kept frozen to compare our training with off-the-shelf contrastive representations.
-- **Fusion:** a symmetric function of the two embeddings, so the score does not depend on input order.
-- **Head:** an MLP with one hidden layer, ReLU and dropout, ending in a sigmoid that outputs the probability of a near-duplicate relation.
-
-![Siamese encoder → symmetric fusion → near-duplicate probability.](method.png)
-
-The system handles rotations, mirroring, grayscale conversion, contrast changes, cropping, resizing, blur, noise and their combinations. It is the matching stage of the image-search pipeline for plagiarism detection in scientific publishing.
+![Siamese architecture: weight-shared encoders, symmetric fusion module, similarity classification head.](method.png)

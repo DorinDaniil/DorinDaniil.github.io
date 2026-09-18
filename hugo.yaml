@@ -40,9 +40,6 @@ menus:
     - name: Publications
       pageRef: /publications
       weight: 30
-    - name: Talks
-      pageRef: /talks
-      weight: 40
 
 markup:
   goldmark:
