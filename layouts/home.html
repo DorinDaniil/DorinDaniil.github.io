@@ -18,7 +18,7 @@
 <section class="block">
   <div class="block-head">
     <h2>{{ .Title }}</h2>
-    <a class="more" href="{{ .RelPermalink }}">All research →</a>
+    <a class="btn" href="{{ .RelPermalink }}">All research</a>
   </div>
   <p class="block-sub">{{ .Params.summary }}</p>
   <div class="grid">
@@ -31,7 +31,7 @@
 <section class="block">
   <div class="block-head">
     <h2>{{ .Title }}</h2>
-    <a class="more" href="{{ .RelPermalink }}">All projects →</a>
+    <a class="btn" href="{{ .RelPermalink }}">All projects</a>
   </div>
   <p class="block-sub">{{ .Params.summary }}</p>
   <div class="grid grid-3">
@@ -46,8 +46,20 @@
     {{ range hugo.Data.teaching }}
     <li>
       <div class="row"><b>{{ with .url }}<a href="{{ . }}" target="_blank" rel="noopener">{{ end }}{{ .course }}{{ with .url }}</a>{{ end }}</b><span class="muted">{{ .period }}</span></div>
-      <div class="muted">{{ .role }} � {{ .org }}</div>
+      <div class="muted">{{ .role }}, {{ .org }}</div>
       {{ with .topics }}<div class="tags">{{ range . }}<span class="tag">{{ . }}</span>{{ end }}</div>{{ end }}
+    </li>
+    {{ end }}
+  </ul>
+</section>
+
+<section class="block">
+  <h2>Theses</h2>
+  <ul class="plain">
+    {{ range hugo.Data.theses }}
+    <li>
+      <div class="row"><b><a href="{{ .url }}" target="_blank" rel="noopener">{{ .title }}</a></b><span class="muted">{{ .year }}</span></div>
+      <div class="muted">{{ .degree }}, {{ .org }}{{ with .note }} &middot; {{ . }}{{ end }}</div>
     </li>
     {{ end }}
   </ul>
