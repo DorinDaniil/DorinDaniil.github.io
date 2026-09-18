@@ -5,7 +5,7 @@ year: 2025
 venue: ICLR 2025
 math: true
 authors: "Demyan Yarmoshik, Alexander Rogozin, Nikita Kiselev, **Daniil Dorin**, Alexander Gasnikov, Dmitry Kovalev"
-cover: card.png
+cover: plot.png
 coverContain: true
 summary: Lower complexity bounds for decentralized optimization with affine coupled constraints, and the first linearly convergent first-order decentralized algorithm that achieves them.
 tags: [optimization, decentralized, convex]

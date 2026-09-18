@@ -5,7 +5,7 @@ year: 2026
 venue: Computer Vision and Image Understanding
 status: under review
 authors: "**Daniil Dorin**, Kseniia Varlamova, Andrey Grabovoy"
-cover: card.png
+cover: graphical_abstract.png
 coverContain: true
 summary: Plagiarism detection reformulated as predicting the sequence of transformations that derives one image from another, with an encoder–decoder model and the Canonical Jaccard Index.
 tags: [image matching, plagiarism detection, encoder–decoder]
