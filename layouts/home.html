@@ -1,0 +1,65 @@
+{{ define "main" }}
+{{ $a := site.Params.author }}
+<section class="hero">
+  <img class="avatar" src="{{ $a.avatar | relURL }}" alt="{{ $a.name }}" width="160" height="160">
+  <div>
+    <h1>{{ $a.name }}</h1>
+    <p class="role">{{ $a.role }}</p>
+    <div class="prose lead">{{ .Content }}</div>
+    <div class="links">
+      {{ range site.Params.social }}
+      <a class="chip" href="{{ .url }}" {{ if not (hasPrefix .url "mailto:") }}target="_blank" rel="noopener"{{ end }}>{{ partial "icon.html" .icon }}<span>{{ .name }}</span></a>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+{{ with site.GetPage "/research" }}
+<section class="block">
+  <div class="block-head">
+    <h2>{{ .Title }}</h2>
+    <a class="more" href="{{ .RelPermalink }}">All research →</a>
+  </div>
+  <p class="block-sub">{{ .Params.summary }}</p>
+  <div class="grid">
+    {{ range .Pages.ByWeight }}{{ partial "card.html" . }}{{ end }}
+  </div>
+</section>
+{{ end }}
+
+{{ with site.GetPage "/projects" }}
+<section class="block">
+  <div class="block-head">
+    <h2>{{ .Title }}</h2>
+    <a class="more" href="{{ .RelPermalink }}">All projects →</a>
+  </div>
+  <p class="block-sub">{{ .Params.summary }}</p>
+  <div class="grid grid-3">
+    {{ range .Pages.ByWeight }}{{ partial "card.html" . }}{{ end }}
+  </div>
+</section>
+{{ end }}
+
+<section class="block two-col">
+  <div>
+    <h2>Teaching</h2>
+    <ul class="plain">
+      {{ range hugo.Data.teaching }}
+      <li>
+        <div class="row"><b>{{ with .url }}<a href="{{ . }}" target="_blank" rel="noopener">{{ $.Scratch.Set "t" .}}{{ end }}{{ .course }}{{ with .url }}</a>{{ end }}</b><span class="muted">{{ .period }}</span></div>
+        <div class="muted">{{ .role }} · {{ .org }}</div>
+        {{ with .topics }}<div class="tags">{{ range . }}<span class="tag">{{ . }}</span>{{ end }}</div>{{ end }}
+      </li>
+      {{ end }}
+    </ul>
+  </div>
+  <div>
+    <h2>Awards</h2>
+    <ul class="plain">
+      {{ range hugo.Data.awards }}
+      <li><div class="row"><b>{{ .name }}</b><span class="muted">{{ .period }}</span></div>{{ with .note }}<div class="muted">{{ . }}</div>{{ end }}</li>
+      {{ end }}
+    </ul>
+  </div>
+</section>
+{{ end }}

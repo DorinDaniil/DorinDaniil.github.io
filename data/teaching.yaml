@@ -1,0 +1,11 @@
+- course: Deep Learning
+  role: Lecturer & seminarian
+  org: MIPT
+  period: Sep 2024 – present
+  url: https://github.com/intsystems/Deep-Learning-Course
+  topics: [Computer vision, Detection & segmentation, Image matching, Multimodality & VLMs]
+- course: My First Scientific Paper (m1p)
+  role: Lecturer & scientific consultant
+  org: MIPT
+  period: Feb 2023 – present
+  url: https://github.com/intsystems/m1p

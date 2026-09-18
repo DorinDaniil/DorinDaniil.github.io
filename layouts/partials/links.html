@@ -1,0 +1,8 @@
+{{- /* renders .Params.links: list of {name, url, icon} */ -}}
+{{ with .Params.links }}
+<div class="links">
+  {{ range . }}
+  <a class="chip" href="{{ .url }}" {{ if not (hasPrefix .url "/") }}target="_blank" rel="noopener"{{ end }}>{{ partial "icon.html" (.icon | default "link") }}<span>{{ .name }}</span></a>
+  {{ end }}
+</div>
+{{ end }}

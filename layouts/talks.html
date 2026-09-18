@@ -1,0 +1,30 @@
+{{ define "main" }}
+<section class="block">
+  <h1>{{ .Title }}</h1>
+  <div class="prose">{{ .Content }}</div>
+  <h2 class="pub-group">Talks</h2>
+  <ol class="pubs">
+    {{ range hugo.Data.talks }}
+    <li>
+      <span class="year">{{ .date }}</span>
+      <div>
+        <div class="t">{{ if .url }}<a href="{{ .url }}" target="_blank" rel="noopener">{{ .title }}</a>{{ else }}{{ .title }}{{ end }}</div>
+        <div class="v">{{ .event }}</div>
+      </div>
+    </li>
+    {{ end }}
+  </ol>
+  <h2 class="pub-group">Posters</h2>
+  <ol class="pubs">
+    {{ range hugo.Data.posters }}
+    <li>
+      <span class="year">{{ .date }}</span>
+      <div>
+        <div class="t">{{ if .url }}<a href="{{ .url }}" target="_blank" rel="noopener">{{ .title }}</a>{{ else }}{{ .title }}{{ end }}</div>
+        <div class="v">{{ .event }}</div>
+      </div>
+    </li>
+    {{ end }}
+  </ol>
+</section>
+{{ end }}

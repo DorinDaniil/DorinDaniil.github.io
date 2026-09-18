@@ -1,0 +1,14 @@
+{{- $u := urls.Parse .Destination -}}
+{{- $src := $u.String -}}
+{{- $res := "" -}}
+{{- if not $u.IsAbs -}}{{- $res = .Page.Resources.Get $u.Path -}}{{- end -}}
+<figure class="fig">
+{{- if and $res (ne $res.MediaType.SubType "svg") -}}
+  {{- $img := $res -}}
+  {{- if gt $img.Width 1600 -}}{{- $img = $img.Resize "1600x" -}}{{- end -}}
+  <img src="{{ $img.RelPermalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}" alt="{{ .PlainText }}" loading="lazy">
+{{- else -}}
+  <img src="{{ $src }}" alt="{{ .PlainText }}" loading="lazy">
+{{- end -}}
+{{- with .Title }}<figcaption>{{ . | markdownify }}</figcaption>{{ else }}{{ with .PlainText }}<figcaption>{{ . }}</figcaption>{{ end }}{{ end -}}
+</figure>

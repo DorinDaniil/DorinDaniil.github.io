@@ -1,0 +1,26 @@
+{{ define "main" }}
+<section class="block">
+  <h1>{{ .Title }}</h1>
+  <div class="prose">{{ .Content }}</div>
+  {{ range hugo.Data.publications.groups }}
+  <h2 class="pub-group">{{ .name }}</h2>
+  <ol class="pubs">
+    {{ range .items }}
+    <li>
+      <span class="year">{{ .year }}</span>
+      <div>
+        <div class="t">{{ if .page }}<a href="{{ .page | relURL }}">{{ .title }}</a>{{ else if .url }}<a href="{{ .url }}" target="_blank" rel="noopener">{{ .title }}</a>{{ else }}{{ .title }}{{ end }}</div>
+        <div class="v">{{ .authors | markdownify }}{{ with .venue }} · <i>{{ . }}</i>{{ end }}{{ with .note }} · {{ . }}{{ end }}{{ with .quartile }} <span class="pill">{{ . }}</span>{{ end }}</div>
+        <div class="v links-inline">
+          {{ with .doi }}<a href="https://doi.org/{{ . }}" target="_blank" rel="noopener">DOI</a>{{ end }}
+          {{ with .url }}{{ if not $.Params.hideUrl }}<a href="{{ . }}" target="_blank" rel="noopener">link</a>{{ end }}{{ end }}
+          {{ with .code }}<a href="{{ . }}" target="_blank" rel="noopener">code</a>{{ end }}
+          {{ with .page }}<a href="{{ . | relURL }}">summary</a>{{ end }}
+        </div>
+      </div>
+    </li>
+    {{ end }}
+  </ol>
+  {{ end }}
+</section>
+{{ end }}

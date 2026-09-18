@@ -1,0 +1,26 @@
+{{- /* a research/project card: expects a page */ -}}
+{{ $cover := "" }}
+{{ with .Params.cover }}{{ $cover = $.Resources.GetMatch . }}{{ end }}
+<a class="card" href="{{ .RelPermalink }}">
+  <div class="card-media{{ if .Params.coverContain }} contain{{ end }}">
+    {{ if $cover }}
+      {{ if eq $cover.MediaType.SubType "svg" }}
+        <img src="{{ $cover.RelPermalink }}" alt="{{ .Title }}" loading="lazy">
+      {{ else }}
+        {{ $img := $cover.Fit "900x600" }}
+        <img src="{{ $img.RelPermalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}" alt="{{ .Title }}" loading="lazy">
+      {{ end }}
+    {{ end }}
+  </div>
+  <div class="card-body">
+    <div class="card-meta">
+      {{ with .Params.year }}<span class="pill">{{ . }}</span>{{ end }}
+      {{ with .Params.venue }}<span>{{ . }}</span>{{ end }}
+      {{ with .Params.stars }}<span class="stars">{{ partial "icon.html" "star" }} {{ . }}</span>{{ end }}
+    </div>
+    <h3>{{ .Title }}</h3>
+    {{ with .Params.authors }}<p class="card-authors">{{ . | markdownify }}</p>{{ end }}
+    <p class="card-summary">{{ .Params.summary | default .Summary | plainify }}</p>
+    {{ with .Params.tags }}<div class="tags">{{ range . }}<span class="tag">{{ . }}</span>{{ end }}</div>{{ end }}
+  </div>
+</a>

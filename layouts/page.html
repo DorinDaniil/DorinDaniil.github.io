@@ -1,0 +1,21 @@
+{{ define "main" }}
+<article class="single">
+  <p class="crumbs"><a href="{{ .Parent.RelPermalink }}">{{ .Parent.Title }}</a></p>
+  <div class="card-meta">
+    {{ with .Params.year }}<span class="pill">{{ . }}</span>{{ end }}
+    {{ with .Params.venue }}<span>{{ . }}</span>{{ end }}
+    {{ with .Params.status }}<span>· {{ . }}</span>{{ end }}
+  </div>
+  <h1>{{ .Title }}</h1>
+  {{ with .Params.authors }}<p class="authors">{{ . | markdownify }}</p>{{ end }}
+  {{ with .Params.affiliations }}<p class="muted small">{{ . | markdownify }}</p>{{ end }}
+  {{ partial "links.html" . }}
+  <div class="prose">{{ .Content }}</div>
+  {{ with .Params.bibtex }}
+  <details class="bib">
+    <summary>BibTeX</summary>
+    <pre><code>{{ . }}</code></pre>
+  </details>
+  {{ end }}
+</article>
+{{ end }}

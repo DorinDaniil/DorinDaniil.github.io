@@ -1,0 +1,82 @@
+groups:
+  - name: Journal and conference papers
+    items:
+      - year: 2025
+        title: "Decoding visual information from neural signals: image reconstruction based on joint functional magnetic resonance imaging and electroencephalography analysis"
+        authors: "**D. Dorin**, N. Kiselev, A. Grabovoy"
+        venue: Informatics and its Applications, 20(2), 35–49
+        quartile: Q3
+        doi: 10.14357/19922264260203
+        page: /research/fmri-eeg-decoding/
+      - year: 2025
+        title: Enhancing fMRI Data Decoding with Spatiotemporal Characteristics in Limited Dataset
+        authors: "**D. Dorin**, A. Grabovoy, V. Strijov"
+        venue: Doklady Mathematics
+        quartile: Q2
+        doi: 10.1134/S1064562425700383
+        code: https://github.com/DorinDaniil/Spatial-and-Temporal-Characteristics
+        page: /research/spatiotemporal-fmri/
+      - year: 2025
+        title: Pairwise Image Matching for Plagiarism Detection
+        authors: "**D. Dorin**, K. Varlamova, A. Grabovoy"
+        venue: Doklady Mathematics, 112(2), 370–381
+        quartile: Q2
+        doi: 10.1134/S1064562425700486
+        code: https://github.com/DorinDaniil/Pairwise-Image-Matching
+        page: /research/pairwise-image-matching/
+      - year: 2025
+        title: "Beyond Familiar Domains: Investigating the Generalization Power of Machine-Generated Image Detectors"
+        authors: "K. Varlamova, **D. Dorin**, A. Grabovoy"
+        venue: Doklady Mathematics
+        quartile: Q2
+        url: https://www.elibrary.ru/item.asp?id=83189196
+      - year: 2025
+        title: Decentralized Optimization with Coupled Constraints
+        authors: "D. Yarmoshik, A. Rogozin, N. Kiselev, **D. Dorin** et al."
+        venue: ICLR 2025
+        quartile: A*
+        url: https://openreview.net/forum?id=AJM52ygi6Y
+      - year: 2024
+        title: "Forecasting fMRI Images From Video Sequences: Linear Model Analysis"
+        authors: "**D. Dorin**, N. Kiselev, A. Grabovoy, V. Strijov"
+        venue: Health Information Science and Systems, 12, 55
+        quartile: Q1
+        doi: 10.1007/s13755-024-00315-5
+        code: https://github.com/DorinDaniil/Forecasting-fMRI-Images
+        page: /research/forecasting-fmri/
+  - name: Under review
+    items:
+      - year: 2026
+        title: "Evidential Image Matching: Predicting Transformation Sequences to Derive One Image from Another"
+        authors: "**D. Dorin**, K. Varlamova, A. Grabovoy"
+        venue: Computer Vision and Image Understanding
+        quartile: Q1
+        code: https://github.com/DorinDaniil/Image-Transform-Predict
+        page: /research/evidential-image-matching/
+      - year: 2026
+        title: Approximation of fMRI data from the audio time series
+        authors: "A. German, **D. Dorin**, A. Grabovoy"
+        note: in preparation
+        code: https://github.com/intsystems/2025-Project-172
+  - name: Conference theses
+    items:
+      - year: 2026
+        title: Decoding visual information from brain signals based on spatiotemporal characteristics
+        authors: "**D. Dorin**, A. Grabovoy"
+        venue: 68th MIPT All-Russian Scientific Conference
+        url: https://drive.google.com/file/d/1pCDeb6k_L0NW7sYnbn_2Fl8a_LNXAv1v/view
+      - year: 2025
+        title: Decoding visual stimuli from multimodal brain signals
+        authors: "**D. Dorin**, N. Kiselev, A. Grabovoy"
+        venue: 22nd All-Russian Conference "Mathematical Methods for Pattern Recognition" (MMPR)
+        doi: 10.29003/m4729.978-5-317-07438-8
+      - year: 2025
+        title: Enhancing fMRI decoding under limited sampling conditions
+        authors: "**D. Dorin**, A. Grabovoy"
+        venue: 67th MIPT All-Russian Scientific Conference
+        url: https://old.mipt.ru/upload/medialibrary/600/fpmi_kor.pdf
+      - year: 2024
+        title: Spatial and temporal methods of time series analysis
+        authors: "**D. Dorin**, N. Kiselev, A. Grabovoy"
+        venue: 66th MIPT All-Russian Scientific Conference
+        url: https://old.mipt.ru/upload/medialibrary/a49/5.-fpmi_2024-_1_.pdf

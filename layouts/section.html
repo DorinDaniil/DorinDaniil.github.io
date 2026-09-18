@@ -1,0 +1,10 @@
+{{ define "main" }}
+<section class="block">
+  <h1>{{ .Title }}</h1>
+  {{ with .Params.summary }}<p class="block-sub">{{ . }}</p>{{ end }}
+  <div class="prose">{{ .Content }}</div>
+  <div class="grid{{ if eq .Section "projects" }} grid-3{{ end }}">
+    {{ range .Pages.ByWeight }}{{ partial "card.html" . }}{{ end }}
+  </div>
+</section>
+{{ end }}

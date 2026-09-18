@@ -1,0 +1,8 @@
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© {{ now.Year }} {{ site.Params.author.name }}</span>
+    <span class="footer-links">
+      {{ range site.Params.social }}<a href="{{ .url }}" {{ if not (hasPrefix .url "mailto:") }}target="_blank" rel="noopener"{{ end }}>{{ .name }}</a>{{ end }}
+    </span>
+  </div>
+</footer>
