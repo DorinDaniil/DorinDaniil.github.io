@@ -36,6 +36,7 @@ groups:
         venue: ICLR 2025
         quartile: A*
         url: https://openreview.net/forum?id=AJM52ygi6Y
+        page: /research/coupled-constraints/
       - year: 2024
         title: "Forecasting fMRI Images From Video Sequences: Linear Model Analysis"
         authors: "**D. Dorin**, N. Kiselev, A. Grabovoy, V. Strijov"
