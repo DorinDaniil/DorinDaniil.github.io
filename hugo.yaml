@@ -12,6 +12,13 @@ params:
     location: Moscow, Russia
     email: dorin.dd@phystech.edu
     avatar: /avatar.jpg
+  cv:
+    - name: Short CV
+      note: 1 page
+      file: /cv/Dorin_CV.pdf
+    - name: Full CV
+      note: 4 pages, publications, talks, awards
+      file: /cv/Dorin_CV_full.pdf
   social:
     - name: GitHub
       url: https://github.com/DorinDaniil

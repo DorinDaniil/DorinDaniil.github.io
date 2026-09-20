@@ -7,6 +7,14 @@
     <p class="role">{{ $a.role }}</p>
     <div class="prose lead">{{ .Content }}</div>
     <div class="links">
+      <details class="dd">
+        <summary class="chip chip-accent">{{ partial "icon.html" "paper" }}<span>CV</span><svg class="caret" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg></summary>
+        <div class="dd-menu">
+          {{ range site.Params.cv }}
+          <a href="{{ .file | relURL }}" target="_blank" rel="noopener"><b>{{ .name }}</b><span>{{ .note }}</span></a>
+          {{ end }}
+        </div>
+      </details>
       {{ range site.Params.social }}
       <a class="chip" href="{{ .url }}" {{ if not (hasPrefix .url "mailto:") }}target="_blank" rel="noopener"{{ end }}>{{ partial "icon.html" .icon }}<span>{{ .name }}</span></a>
       {{ end }}

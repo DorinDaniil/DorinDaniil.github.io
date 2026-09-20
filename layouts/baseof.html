@@ -20,6 +20,7 @@
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.11/contrib/auto-render.min.js" onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false},{left:'\(',right:'\)',display:false},{left:'\[',right:'\]',display:true}]})"></script>
   {{ end }}
   <script>
+    document.addEventListener("click",e=>{document.querySelectorAll("details.dd[open]").forEach(d=>{if(!d.contains(e.target))d.removeAttribute("open")})});
     try{const t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t;}catch(e){}
   </script>
 </head>
