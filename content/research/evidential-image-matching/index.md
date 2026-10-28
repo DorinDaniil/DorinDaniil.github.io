@@ -2,8 +2,7 @@
 title: "Evidential Image Matching: Predicting Transformation Sequences to Derive One Image from Another"
 weight: 20
 year: 2026
-venue: Computer Vision and Image Understanding
-status: under review
+venue: Under review
 authors: "**Daniil Dorin**, Kseniia Varlamova, Andrey Grabovoy"
 cover: graphical_abstract.png
 coverContain: true

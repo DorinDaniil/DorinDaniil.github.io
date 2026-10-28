@@ -50,8 +50,6 @@ groups:
       - year: 2026
         title: "Evidential Image Matching: Predicting Transformation Sequences to Derive One Image from Another"
         authors: "**D. Dorin**, K. Varlamova, A. Grabovoy"
-        venue: Computer Vision and Image Understanding
-        quartile: Q1
         code: https://github.com/DorinDaniil/Image-Transform-Predict
         page: /research/evidential-image-matching/
   - name: Conference theses
