@@ -1,5 +1,5 @@
 ---
-title: "Evidential Image Matching: Predicting Transformation Sequences to Derive One Image from Another"
+title: "From Similarity to Evidence: Image Copy Detection by Predicting Transformation Sequences"
 weight: 20
 year: 2026
 venue: Under review

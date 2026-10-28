@@ -48,7 +48,7 @@ groups:
   - name: Under review
     items:
       - year: 2026
-        title: "Evidential Image Matching: Predicting Transformation Sequences to Derive One Image from Another"
+        title: "From Similarity to Evidence: Image Copy Detection by Predicting Transformation Sequences"
         authors: "**D. Dorin**, K. Varlamova, A. Grabovoy"
         code: https://github.com/DorinDaniil/Image-Transform-Predict
         page: /research/evidential-image-matching/
